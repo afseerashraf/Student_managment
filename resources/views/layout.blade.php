@@ -45,7 +45,7 @@
                 <a class="" href="">Home</a>
 
                 <a class="" href="{{ route('students') }}">Student</a>
-                <a href="#news">Teacher</a>
+                <a href="{{ route('teachers') }}">Teacher</a>
                 <a href="#contact">Enrollment</a>
                 <a href="#about">cources</a>
                 <a href="#about">Payment</a>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\teacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,22 @@ Route::prefix('students')->group(function(){
         route::get('/edit/{id}', 'edit')->name('edit');
         route::post('/update', 'update')->name('updated');
         route::get('/delete/{id}', 'destroy')->name('delete');
+    });
+});
+
+Route::prefix('teachers')->group(function(){
+    Route::controller(TeacherController::class)->group(function(){
+        route::get('/teachers', 'index')->name('teachers');
+        route::get('/show/{id}', 'show')->name('show');
+
+        route::get('/create', 'create')->name('create');
+        route::post('/store', 'store')->name('store');
+        route::get('/edit/{id}', 'edit')->name('edit');
+        route::post('/update', 'update')->name('updated');
+        route::get('/delete/{id}', 'destroy')->name('delete');
+
+
+
+
     });
 });
