@@ -48,8 +48,9 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        $student = Student::find($id);
-        return view('student.show')->with('students', $student);
+        $studentId = Crypt::decrypt($id);
+        $student = Student::find($studentId);
+        return view('student.show', compact('student'));
     }
 
     /**

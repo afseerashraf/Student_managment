@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::prefix('students')->group(function(){
     Route::controller(StudentController::class)->group(function(){
         route::get('/students', 'index')->name('students');
-        route::get('/show', 'show')->name('show');
+        route::get('/show/{id}', 'show')->name('show');
         route::get('/create', 'create')->name('create');
         route::post('/store', 'store')->name('store');
         route::get('/edit/{id}', 'edit')->name('edit');
