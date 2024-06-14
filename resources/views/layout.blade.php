@@ -42,14 +42,13 @@
     <div class="row">
         <div class="col-md-3">
             <div class="sidebar">
-                <a class="" href="">Home</a>
+                <a class="{{ route('home') }}" href="">Home</a>
 
                 <a class="" href="{{ route('students') }}">Student</a>
                 <a href="{{ route('teachers') }}">Teacher</a>
-                <a href="#contact">Enrollment</a>
-                <a href="#about">cources</a>
-                <a href="#about">Payment</a>
-
+                <a href="{{ route('cources') }}">cources</a>
+                <a href="{{ route('batches') }}">Batches</a>
+                <a href="#">Payment</a>
             </div>
 
             

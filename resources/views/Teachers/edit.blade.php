@@ -5,7 +5,7 @@
   <div class="card-header">Contactus Page</div>
   <div class="card-body">
       
-      <form action="{{ route('updated') }}" method="post">
+      <form action="{{ route('updatedTeache') }}" method="post">
        @csrf
        <!-- Spoofing the PUT method -->
 

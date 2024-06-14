@@ -5,7 +5,7 @@
   <div class="card-header">Teacher Page</div>
   <div class="card-body">
       
-      <form action="{{ route('store') }}" method="post">
+      <form action="{{ route('storeTeacher') }}" method="post">
       @csrf
       <label>Name</label></br>
         <input type="text" name="name" id="name" class="form-control"></br>
