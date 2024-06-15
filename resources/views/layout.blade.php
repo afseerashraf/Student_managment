@@ -48,6 +48,8 @@
                 <a href="{{ route('teachers') }}">Teacher</a>
                 <a href="{{ route('cources') }}">cources</a>
                 <a href="{{ route('batches') }}">Batches</a>
+                <a href="{{ route('enrollments') }}">Enrollment</a>
+
                 <a href="#">Payment</a>
             </div>
 

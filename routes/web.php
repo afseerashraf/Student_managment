@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourceController;
+use App\Http\Controllers\EnrollmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\teacherController;
@@ -63,6 +64,8 @@ Route::prefix('cource')->group(function(){
 });
 
 
+
+
 Route::prefix('batch')->group(function(){
     Route::controller(BatchController::class)->group(function(){
         Route::get('/batches', 'index')->name('batches');
@@ -73,5 +76,17 @@ Route::prefix('batch')->group(function(){
         Route::post('/updated', 'update')->name('updateBatch');
         Route::get('/delete/{id}', 'delete')->name('deleteBatch');
 
+    });
+});
+
+Route::prefix('enrollment')->group(function(){
+    Route::controller(EnrollmentController::class)->group(function(){
+        Route::get('/enrollments', 'index')->name('enrollments');
+        Route::get('/create', 'create')->name('enrollmetCreate');
+        Route::post('/store', 'store')->name('storeEnrollment');
+        Route::get('/show/{id}', 'show')->name('showEnrollment');
+        Route::get('edit/{id}', 'edit')->name('editEnrollment');
+        Route::post('/updated', 'update')->name('updateEnrollment');
+        Route::get('/delete/{id}', 'destroy')->name('deleteEnrollment');
     });
 });

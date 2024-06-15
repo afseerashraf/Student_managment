@@ -9,8 +9,13 @@
       @csrf
       <label>Batch Name</label></br>
         <input type="text" name="name" id="name" class="form-control"></br>
-        <label>Course Name</label></br>
-        <input type="text" name="course_id" id="course_id" class="form-control"></br>
+        <label>Course</label></br>
+        <!-- <input type="text" name="course_id" id="course_id" class="form-control"></br> -->
+        <select name="cource_id" id="cource_id">
+        @foreach($cources as $id => $name)
+        <option value="{{ $id }}">{{ $name }}</option>
+        @endforeach
+        </select>
         <label>Start Date</label></br>
         <input type="text" name="startdate" id="startname" class="form-control"></br>
         <input type="submit" value="Save" class="btn btn-success"></br>

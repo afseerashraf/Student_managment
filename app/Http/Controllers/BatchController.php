@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Batch;
+use App\Models\Cource;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Crypt;
@@ -25,7 +26,8 @@ class BatchController extends Controller
      */
     public function create()
     {
-       return view('batches.create');
+        $cources = Cource::pluck('name', 'id');
+        return view('batches.create', compact('cources'));
     }
 
     /**
@@ -61,7 +63,7 @@ class BatchController extends Controller
         $batchId = Crypt::decrypt($id);
         $batch = Batch::find($batchId);
 
-        return view('bathes.edit', compact('batch'));
+        return view('batches.edit', compact('batch'));
     }
 
     /**

@@ -11,4 +11,8 @@ class Cource extends Model
     protected $table = "cources";
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'syllabus', 'duration'];
+
+    public function duration(){
+        return $this->duration."months";
+    }
 }
