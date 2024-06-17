@@ -3,6 +3,7 @@
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourceController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\teacherController;
@@ -89,4 +90,16 @@ Route::prefix('enrollment')->group(function(){
         Route::post('/updated', 'update')->name('updateEnrollment');
         Route::get('/delete/{id}', 'destroy')->name('deleteEnrollment');
     });
+});
+
+Route::prefix('payment')->group(function(){
+    Route::controller(PaymentController::class)->group(function(){
+        Route::get('/payments', 'index')->name('payments');
+        Route::get('/create', 'create')->name('paymentCreate');
+        Route::post('/store', 'store')->name('storePayment');
+        Route::get('/show/{id}', 'show')->name('showPayment');
+        Route::get('/edit/{id}', 'edit')->name('editPayment');
+        Route::post('updated'. 'update')->name('updatePayment');
+        Route::get('/delete', 'destroy')->name('deletePayment');
+    }); 
 });

@@ -8,11 +8,11 @@
       <form action="{{ route('storeCource') }}" method="post">
       @csrf
       <label>cource Name</label></br>
-        <input type="text" name="name" id="name" class="form-control"></br>
+        <input type="text" name="name" id="name" class="form-control" required></br>
         <label>Cource Syllabus</label></br>
-        <input type="text" name="syllabus" id="syllabus" class="form-control"></br>
+        <input type="text" name="syllabus" id="syllabus" class="form-control" required></br>
         <label>Cource Duration</label></br>
-        <input type="text" name="duration" id="duration" class="form-control"></br>
+        <input type="text" name="duration" id="duration" class="form-control" required></br>
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
    
